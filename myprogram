@@ -1,0 +1,16 @@
+#!/bin/bash
+count=$(cat server.csv | awk 'NR>1' | cut -d , -f2)
+for i in $count
+do
+        ping $i -c 1 1> /dev/null
+        status=$(echo $?)
+        if [[ $status -eq 0 ]]
+        then
+                echo "$i connected"
+                echo "$i connected" | mailx -s "Connected ip list | Alert" usmanamirbodla@gmail.com
+        else
+                echo "$i not connected"
+                echo "$i not connected" | mailx -s "Not Connected ip list | Alert" usmanamirbodla@gmail.com
+        fi
+done
+
