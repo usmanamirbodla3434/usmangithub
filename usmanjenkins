@@ -1,0 +1,15 @@
+// File name: UserInfo.java
+public class UserInfo {
+    public static void main(String[] args) {
+        // Your details
+        String name = "Usman Ahmed";
+        String date = "25-Nov-2025";  // you can update the date dynamically if needed
+        String city = "Bahawalpur";
+
+        // Print the information
+        System.out.println("Name: " + name);
+        System.out.println("Date: " + date);
+        System.out.println("City: " + city);
+    }
+}
+
